@@ -1,0 +1,14 @@
+
+request_id,customer_name,email,issue_type,priority,status,created_at,intervention_date
+SAV-1001,Client A,client.a@example.com,Absence de chauffage,Haute,En attente,2026-10-01,
+SAV-1002,Client B,client.b@example.com,Entretien,Normale,Terminée,2026-10-02,2026-10-05
+SAV-1003,Client C,client.c@example.com,Code erreur,Haute,En cours,2026-10-03,
+SAV-1004,Client D,client.d@example.com,Eau chaude,Haute,Intervention planifiée,2026-10-04,2026-10-16
+SAV-1005,Client E,client.e@example.com,Entretien,Basse,Terminée,2026-10-05,2026-10-07
+SAV-1006,Client F,client.f@example.com,Pression,Normale,En attente,2026-10-06,
+SAV-1007,Client G,client.g@example.com,Code erreur,Haute,En cours,2026-10-07,
+SAV-1008,Client H,client.h@example.com,Absence de chauffage,Haute,Intervention planifiée,2026-10-08,2026-10-17
+SAV-1009,Client I,client.i@example.com,Eau chaude,Normale,En attente,2026-10-09,
+SAV-1010,Client J,client.j@example.com,Entretien,Basse,Terminée,2026-10-10,2026-10-12
+SAV-1011,Client K,client.k@example.com,Code erreur,Normale,En attente,2026-10-11,
+SAV-1012,Client L,client.l@example.com,Pression,Normale,En cours,2026-10-12,
