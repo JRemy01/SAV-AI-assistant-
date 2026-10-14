@@ -4,7 +4,7 @@ from langchain_chroma import Chroma
 from langchain_text_splitters import TextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 
-from clean_data import load_data
+from services.clean_data import load_data
 
 EMBEDDING_MODEL = (
     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
@@ -20,7 +20,7 @@ def build_vector():
     vectorstore = Chroma(
         collection_name= "sav_faq",
         embedding_function= embeddings,
-        persist_directory=DB_PATH,
+        persist_directory=str(DB_PATH),
         collection_metadata={"hnsw:space":"cosine"},
     )
 
