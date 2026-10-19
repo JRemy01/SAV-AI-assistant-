@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "deny": [
-      "Never read the .env file"
-    ]
-  }
-}
