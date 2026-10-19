@@ -21,12 +21,22 @@ def prepare_email(request_id, message):
         return {"error": "Demande introuvable."}
 
     row = match.iloc[0]
+
+    # Facts come from the CSV, not from the model
+    intervention = ""
+    if pd.notna(row["intervention_date"]):
+        date = pd.to_datetime(row["intervention_date"]).strftime("%d/%m/%Y")
+        intervention = f"Date d'intervention prévue : {date}.\n\n"
+
     return {
         "statut": "Brouillon",
         "destinataire": row["email"],
         "objet": f"Votre demande {row['request_id']} : {row['issue_type']}",
         "corps":(
             f"Bonjour {row['customer_name']},\n\n"
-            f"{message.strip()}"
+            f"{message.strip()}\n\n"
+            f"{intervention}"
+            "Cordialement,\n"
+            "Le service après-vente"
         ),
     }

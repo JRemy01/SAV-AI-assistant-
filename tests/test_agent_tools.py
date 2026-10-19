@@ -90,3 +90,12 @@ def test_email_unknown_request_returns_error():
 
 def test_email_empty_message_returns_error():
     assert "error" in prepare_email(request_id="SAV-1003", message="   ")
+
+
+def test_email_adds_intervention_date_and_signature():
+    planned = prepare_email(request_id="SAV-1004", message="Nous confirmons votre intervention.")
+    not_planned = prepare_email(request_id="SAV-1003", message="Un technicien passera mardi.")
+
+    assert "16/10/2026" in planned["corps"]
+    assert "Date d'intervention" not in not_planned["corps"]
+    assert planned["corps"].endswith("Le service après-vente")
