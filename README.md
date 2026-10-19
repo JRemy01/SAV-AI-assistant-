@@ -68,6 +68,17 @@ streamlit run app.py
 
 (Available once `app.py` is implemented.)
 
+### 3. Run the tests
+
+```bash
+.venv/bin/pytest                               # fast tests (FAQ parsing, agent tools)
+.venv/bin/pytest -m slow                       # retrieval quality (loads the models)
+.venv/bin/pytest -m ""                         # everything
+.venv/bin/pytest tests/test_agent_tools.py     # agent tools only
+```
+
+Slow tests are skipped by default (see `pytest.ini`).
+
 ## Data
 
 ### FAQ (`data/faq_chaudiere.md`)

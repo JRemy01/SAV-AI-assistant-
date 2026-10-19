@@ -2,8 +2,8 @@ from pathlib import Path
 import re
 from langchain_core.documents import Document
 
-
-data_path = Path("data/faq_chaudiere.md")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+data_path = PROJECT_ROOT/ "data"/"faq_chaudiere.md"
 def load_data():
     data = data_path.read_text(encoding="utf-8")
 
@@ -38,6 +38,6 @@ def load_data():
         doc.id = faq_id
         documents.append(doc)
 
-        if not documents:
-            raise ValueError("No FAQ documents available.")
+    if not documents:
+        raise ValueError("Pas de document.")
     return documents

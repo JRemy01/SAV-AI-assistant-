@@ -7,4 +7,8 @@ langchain-core
 langchain-chroma
 langchain-huggingface
 langchain-text-splitters
-sentence-transformers
+sentence-transformerslangchain-community
+langchain-classic
+rank-bm25
+flashrank
+pytest
